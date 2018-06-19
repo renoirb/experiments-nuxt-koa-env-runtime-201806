@@ -1,0 +1,1 @@
+./node_modules/.bin/cross-env DEBUG=* NODE_ENV=production API_URL_BROWSER=http://foo.dev.local:9098 HOST=foo.dev.local PORT=9098 node build/main.js

@@ -1,0 +1,59 @@
+{
+  "name": "koa-template",
+  "version": "1.1.0",
+  "description": "Nuxt.js project",
+  "author": "Renoir Boulanger <renoir.boulanger@cgi.com>",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env DEBUG=*,-babel,-snapdragon:* backpack dev",
+    "build": "nuxt build && backpack build",
+    "start": "cross-env NODE_ENV=production node build/main.js",
+    "precommit": "npm run lint",
+    "lint": "eslint --ext .vue,.js -c .eslintrc.json --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .vue,.js -c .eslintrc.json --ignore-path .gitignore ."
+  },
+  "peerDependencies": {
+    "@nuxtjs/proxy": "^1.2.4",
+    "axios": "^0.18.0",
+    "axios-retry": "^3.0.2",
+    "consola": "^1.1.4",
+    "webpack": "^3.11.0",
+    "vue": "^2.5"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
+    "element-ui": "^2.3",
+    "cross-env": "^5.0.1",
+    "js-yaml": "^3.11.0",
+    "koa": "^2.4.1",
+    "koa-body": "^2.3.0",
+    "koa-bunyan": "^1.0.1",
+    "koa-bunyan-logger": "^2.0.0",
+    "koa-compose": "^4.0.0",
+    "koa-compress": "^2.0.0",
+    "koa-proxies": "^0.6.2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.1",
+    "nuxt": "^1.4",
+    "source-map-support": "^0.4.15",
+    "xmlify": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-component": "^1.1.1",
+    "backpack-core": "^0.3.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "nodemon": "^1.11.0",
+    "scmp": "^2.0.0"
+  },
+  "nodemonConfig": {
+    "ignore": ["build/*"],
+    "delay": "2500"
+  }
+}
