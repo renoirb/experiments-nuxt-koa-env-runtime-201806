@@ -11,17 +11,21 @@ and that [@nuxtjs/axios](https://github.com/nuxt-community/axios-module) picks u
 
 ## Build Setup
 
-``` bash
-# install dependencies
-$ yarn
+1. Make sure `/etc/hosts` has an entry `127.0.0.1  foo.dev.local`, or any other ethernet addr, refer to [**start** script](./start)
+2. Prepare to run
 
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-```
+   ``` bash
+   # install dependencies
+   $ yarn
+   
+   # serve with hot reload at localhost:3000
+   $ yarn dev
+   
+   # build for production and launch server
+   $ yarn build
+   $ yarn --production
+   $ ./start
+   ```
 
 *Note: 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
