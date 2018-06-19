@@ -10,6 +10,7 @@ import body from 'koa-body' // body parser
 import compress from 'koa-compress' // HTTP compression
 import session from 'koa-session' // session for flash messages
 import compose from 'koa-compose'
+import cors from '@koa/cors'
 import hpi from './api'
 
 async function start () {
@@ -29,6 +30,8 @@ async function start () {
     const builder = new Builder(nuxt)
     await builder.build()
   }
+
+  app.use(cors())
 
   app.use(async function contextStateSubapp (ctx, next) {
     // e.g. '/hpi/examples/activity'.split('/')   => ['', 'hpi', 'examples', 'activity']

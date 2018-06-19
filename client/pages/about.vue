@@ -32,7 +32,9 @@ import {
 export default {
   asyncData ({
     req,
+    env,
   }) {
+    console.log('asyncData at API_URL', env.API_URL)
     return {
       name: req ? 'server' : 'client',
     }

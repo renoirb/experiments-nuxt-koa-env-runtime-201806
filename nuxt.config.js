@@ -45,15 +45,19 @@ module.exports = {
   dev: (process.env.NODE_ENV !== 'production'),
   plugins: [
     '~plugins/element',
+    {
+      src: '~/plugins/client-only',
+      ssr: false,
+    },
   ],
   modules: [
     ['@nuxtjs/axios',
       {
-        browserBaseURL: process.env.API_URL_BROWSER, // This does not work. too.
+        // browserBaseURL: process.env.API_URL_BROWSER, // This does not work.
         requestInterceptor: (config, {
           store,
         }) => {
-          console.log('@nuxtjs/axios requestInterceptor')
+          console.log('@nuxtjs/axios requestInterceptor') // Not really useful either.
 
           return config
         },
@@ -62,17 +66,17 @@ module.exports = {
   ],
   axios: {
     debug: (process.env.NODE_ENV !== 'production'),
+    // browserBaseURL: 'http://foo.dev.local:9098/', // This does not work.
   },
   /*
    ** Build configuration
    */
   build: {
     vendor: [
-      'axios',
       'element-ui',
     ],
     plugins: [
-      new webpack.EnvironmentPlugin({
+      new webpack.EnvironmentPlugin({ // Not really useful.
         NODE_ENV: 'development',
         API_URL: 'http://localhost:3000',
         API_URL_BROWSER: 'http://localhost:3000',
@@ -82,5 +86,12 @@ module.exports = {
         PORT: 3000,
       }),
     ],
+    extend (config, somethingElse) {
+      /**
+       * Export those as mixin instead
+       * see: https://github.com/nuxt/nuxt.js/issues/1323#issuecomment-325797595
+       */
+      // config.resolve.alias['wip'] = '~/utils/wip' // Changed my mind, will use ssr:false only.
+    },
   },
 }

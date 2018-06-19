@@ -17,13 +17,14 @@
     "axios": "^0.18.0",
     "axios-retry": "^3.0.2",
     "consola": "^1.1.4",
-    "webpack": "^3.11.0",
-    "vue": "^2.5"
+    "vue": "^2.5",
+    "webpack": "^3.11.0"
   },
   "dependencies": {
+    "@koa/cors": "2",
     "@nuxtjs/axios": "^5.3.1",
-    "element-ui": "^2.3",
     "cross-env": "^5.0.1",
+    "element-ui": "^2.3",
     "js-yaml": "^3.11.0",
     "koa": "^2.4.1",
     "koa-body": "^2.3.0",
@@ -53,7 +54,9 @@
     "scmp": "^2.0.0"
   },
   "nodemonConfig": {
-    "ignore": ["build/*"],
+    "ignore": [
+      "build/*"
+    ],
     "delay": "2500"
   }
 }
