@@ -1,0 +1,32 @@
+{
+  "name": "experiments-nuxt-koa-env-runtime-201806",
+  "description": "Nuxt.js with Koa and pass process environment variables",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/server-app.js",
+  "scripts": {
+    "dev": "cross-env DEBUG=* NODE_ENV=development nuxt",
+    "build": "cross-env NODE_ENV=production nuxt build",
+    "start": "cross-env NODE_ENV=production HOST=example.local PORT=9091 nuxt start",
+    "lint": "eslint --ext .vue,.js -c .eslintrc.json --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .vue,.js -c .eslintrc.json --ignore-path .gitignore ."
+  },
+  "peerDependencies": {
+    "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
+    "cross-env": "^5.2.0",
+    "nuxt": "^1.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-vue": "^4.5.0"
+  }
+}
